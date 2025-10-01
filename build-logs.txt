@@ -1,0 +1,36 @@
+❯ bun astro build
+$ astro build
+02:22:24 [content] Syncing content
+02:22:24 [content] Synced content
+02:22:24 [types] Generated 73ms
+02:22:24 [build] output: "static"
+02:22:24 [build] mode: "static"
+02:22:24 [build] directory: C:\Users\ewen\projects\repro-astro-rewrite\dist\
+02:22:24 [build] Collecting build info...
+02:22:24 [build] ✓ Completed in 104ms.
+02:22:24 [build] Building static entrypoints...
+02:22:25 [vite] ✓ built in 989ms
+02:22:25 [build] ✓ Completed in 1.06s.
+
+ generating static routes 
+02:22:25 ▶ src/pages/redirected/[nested_param].astro
+[
+  { params: { nested_param: 'hello' } },
+  { params: { nested_param: 'héllo' } },
+  { params: { nested_param: 'h%C3%A9llo' } }
+]
+02:22:25   ├─ /redirected/hello/index.html (+9ms)
+02:22:25   ├─ /redirected/héllo/index.html (+7ms)
+02:22:25   └─ /redirected/h%C3%A9llo/index.html (+6ms)
+02:22:25 ▶ src/pages/[root_param].astro
+02:22:25   ├─ /hello/index.html (+7ms)
+02:22:25   ├─ /héllo/index.html02:22:25 [WARN] `Astro.request.headers` was used when rendering the route `src/pages/[root_param].astro'`. `Astro.request.headers` is not available on prerendered pages. If you need access to request headers, make sure that the page is server-rendered using `export const prerender = false;` or by setting `output` to `"server"` in your Astro config to make all your pages server-rendered by default.
+ (+5ms)
+02:22:25   └─ /h%C3%A9llo/index.html02:22:25 [WARN] `Astro.request.headers` was used when rendering the route `src/pages/[root_param].astro'`. `Astro.request.headers` is not available on prerendered pages. If you need access to request headers, make sure that the page is server-rendered using `export const prerender = false;` or by setting `output` to `"server"` in your Astro config to make all your pages server-rendered by default.
+ (+5ms)
+02:22:25 ▶ src/pages/index.astro
+02:22:25   └─ /index.html (+4ms)
+02:22:25 ✓ Completed in 165ms.
+
+02:22:25 [build] 7 page(s) built in 1.36s
+02:22:25 [build] Complete!
