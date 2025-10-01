@@ -8,6 +8,9 @@
       },
     },
   },
+  "patchedDependencies": {
+    "astro@5.14.1": "patches/astro@5.14.1.patch",
+  },
   "packages": {
     "@astrojs/compiler": ["@astrojs/compiler@2.13.0", "", {}, "sha512-mqVORhUJViA28fwHYaWmsXSzLO9osbdZ5ImUfxBarqsYdMlPbqAqGJCxsNzvppp1BEzc1mJNjOVvQqeDN8Vspw=="],
 
