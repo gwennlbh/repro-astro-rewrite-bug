@@ -17,6 +17,9 @@ export const getStaticPaths = (() => {
     {
       params: { root_param: "accented_hello" },
     },
+    {
+      params: { root_param: "ascii_héllo" }
+    }
   ]
 }) satisfies GetStaticPaths
 
@@ -26,6 +29,12 @@ let { root_param } = Astro.params
 if (root_param === "accented_hello") {
   return Astro.rewrite(`/redirected/héllo`)
 }
+
+// Testing rewriting from a accented param to an ASCII one
+if (root_param === "ascii_héllo") {
+  return Astro.rewrite(`/redirected/hello`)
+}
+
 
 return Astro.rewrite(`/redirected/${root_param}`)
 ---
