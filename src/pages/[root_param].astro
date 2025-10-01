@@ -8,6 +8,9 @@ export const getStaticPaths = (() => {
     {
       params: { root_param: "héllo" },
     },
+    {
+      params: { root_param: encodeURIComponent("héllo") },
+    },
   ]
 }) satisfies GetStaticPaths
 
