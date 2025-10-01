@@ -14,10 +14,18 @@ export const getStaticPaths = (() => {
     {
       params: { root_param: encodeURIComponent("héllo") },
     },
+    {
+      params: { root_param: "accented_hello" },
+    },
   ]
 }) satisfies GetStaticPaths
 
-const { root_param } = Astro.params
+let { root_param } = Astro.params
+
+// Testing rewriting from a ASCII param to an accented one
+if (root_param === "accented_hello") {
+  return Astro.rewrite(`/redirected/héllo`)
+}
 
 return Astro.rewrite(`/redirected/${root_param}`)
 ---
