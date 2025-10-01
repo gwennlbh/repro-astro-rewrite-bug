@@ -1,0 +1,17 @@
+---
+import type { GetStaticPaths } from "astro"
+export const getStaticPaths = (() => {
+  return [
+    {
+      params: { root_param: "hello" },
+    },
+    {
+      params: { root_param: "héllo" },
+    },
+  ]
+}) satisfies GetStaticPaths
+
+const { root_param } = Astro.params
+
+return Astro.rewrite(`/redirected/${root_param}`)
+---
